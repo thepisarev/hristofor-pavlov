@@ -1,9 +1,9 @@
 const steps = [
-  { num: '01', title: 'СОЗВОН', text: '30 минут — разбираемся в вашей ситуации' },
-  { num: '02', title: 'ПОДКЛЮЧЕНИЕ', text: 'Подключаемся к камерам удалённо, вам ничего не нужно делать' },
-  { num: '03', title: 'АУДИТ', text: '3-5 смен, живые эксперты смотрят записи' },
-  { num: '04', title: 'ОТЧЁТ', text: 'Вы видите реальную картину с доказательствами' },
-  { num: '05', title: 'РЕКОМЕНДАЦИИ', text: 'Как закрыть дыры и прекратить потери' },
+  { num: '01', title: 'СОЗВОН', text: '30 минут — разбираемся в вашей ситуации и задачах' },
+  { num: '02', title: 'ПОДКЛЮЧЕНИЕ', text: 'Подключаемся к камерам удалённо — вам ничего не нужно делать' },
+  { num: '03', title: 'АУДИТ', text: '3–5 смен, живые эксперты анализируют записи' },
+  { num: '04', title: 'ОТЧЁТ', text: 'Вы видите реальную картину с доказательствами и расчётами' },
+  { num: '05', title: 'ВНЕДРЕНИЕ', text: 'Конкретные рекомендации: как выстроить систему и вернуть контроль' },
 ];
 
 export const Steps: React.FC = () => {
@@ -11,13 +11,13 @@ export const Steps: React.FC = () => {
     <section id="how-it-works" className="py-24 px-4 bg-slate-950 relative">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-4">
-          <h4 className="text-amber-500 font-mono text-xs mb-2 uppercase tracking-widest">/ Протокол</h4>
+          <h4 className="text-amber-500 font-mono text-xs mb-2 uppercase tracking-widest">/ Процесс</h4>
           <h2 className="text-3xl md:text-4xl text-white font-display font-bold uppercase">
             Как это <span className="text-amber-500">работает</span>
           </h2>
         </div>
         <p className="text-center text-slate-500 font-mono text-sm mb-16">
-          1-2 недели от старта до отчёта
+          1–2 недели от старта до отчёта
         </p>
 
         <div className="flex flex-col md:flex-row justify-between items-start gap-8 relative">

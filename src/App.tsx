@@ -5,6 +5,7 @@ import { Schemes } from './components/Schemes';
 import { Myths } from './components/Myths';
 import { Expert } from './components/Expert';
 import { Result } from './components/Result';
+import { Cases } from './components/Cases';
 import { Steps } from './components/Steps';
 import { Pricing } from './components/Pricing';
 import { CTA } from './components/CTA';
@@ -29,7 +30,7 @@ export default function App() {
           className="hidden md:flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 hover:border-amber-500/50 hover:bg-amber-500/10 text-xs font-mono transition-all duration-300 rounded-sm uppercase tracking-wider"
         >
           <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-          Заказать аудит
+          Консультация
         </button>
       </nav>
 
@@ -40,6 +41,7 @@ export default function App() {
         <Myths />
         <Expert />
         <Result />
+        <Cases />
         <Steps />
         <Pricing />
         <CTA onCtaClick={openModal} />
@@ -59,7 +61,7 @@ export default function App() {
             </button>
             <div className="flex items-center gap-3 mb-6 text-amber-500">
               <ShieldAlert className="w-6 h-6" />
-              <h3 className="text-xl font-display font-bold uppercase">Запись на разбор</h3>
+              <h3 className="text-xl font-display font-bold uppercase">Запись на консультацию</h3>
             </div>
 
             <form
@@ -90,7 +92,7 @@ export default function App() {
                 type="submit"
                 className="w-full bg-amber-600 text-white font-bold p-3 hover:bg-amber-500 transition-colors uppercase rounded-sm mt-4 tracking-widest"
               >
-                Записаться на разбор
+                Записаться
               </button>
             </form>
           </div>

@@ -1,10 +1,17 @@
 import { Fingerprint } from 'lucide-react';
 
 const stats = [
-  { value: '12', suffix: 'лет', label: 'В видеоаудите баров' },
-  { value: '60', suffix: '+', label: 'Заведений в сети' },
+  { value: '12', suffix: 'лет', label: 'В индустрии баров' },
+  { value: '60', suffix: '+', label: 'Проверенных заведений' },
   { value: '16 000', suffix: '+', label: 'Проведённых аудитов' },
-  { value: '6 000', suffix: '+', label: 'Выявленных хищений' },
+  { value: '6 000', suffix: '+', label: 'Найденных нарушений' },
+];
+
+const expertise = [
+  'Работал с крупнейшей барной сетью России',
+  'Выстраиваю прозрачные процессы для баров от 5 до 100+ млн оборота',
+  'Подключаюсь удалённо к вашим камерам — без вмешательства в работу',
+  'Результат — отчёт с таймкодами, скриншотами и видео',
 ];
 
 export const Expert: React.FC = () => {
@@ -39,19 +46,21 @@ export const Expert: React.FC = () => {
           <div className="w-full md:w-2/3 space-y-6">
             <div className="flex items-center gap-3 text-amber-500 mb-2">
               <Fingerprint className="w-5 h-5" />
-              <span className="font-mono text-xs uppercase tracking-widest">Кто я такой</span>
+              <span className="font-mono text-xs uppercase tracking-widest">Эксперт по операционной прозрачности</span>
             </div>
 
             <h2 className="text-3xl md:text-4xl text-white font-display font-bold">
               Христофор Павлов
             </h2>
 
-            <p className="text-slate-400 text-base leading-relaxed border-l-2 border-slate-700 pl-6">
-              Работал с крупнейшей барной сетью России. Понимаю психологию сотрудников, психологию хищений,
-              знаю все махинации изнутри. Я не продаю камеры. Не ставлю нейронки за 3 миллиона.
-              Я подключаюсь к вашим камерам удалённо и показываю, где конкретно вы теряете деньги.
-              С таймкодами, скриншотами и видео.
-            </p>
+            <div className="space-y-3 border-l-2 border-slate-700 pl-6">
+              {expertise.map((item, idx) => (
+                <p key={idx} className="text-slate-400 text-base leading-relaxed flex items-start gap-3">
+                  <span className="text-amber-500 shrink-0 mt-1 text-xs">{'>'}</span>
+                  {item}
+                </p>
+              ))}
+            </div>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 border-t border-slate-800 pt-8 mt-4">
               {stats.map((stat, idx) => (

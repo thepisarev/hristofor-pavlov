@@ -11,8 +11,7 @@ export const Footer: React.FC = () => {
               KING<span className="text-slate-500">_CONTROL</span>
             </div>
             <p className="text-slate-400 text-sm max-w-sm">
-              Христофор Павлов — видеоаудит баров и ресторанов.
-              Находим потери, даём доказательства, помогаем закрыть дыры.
+              Христофор Павлов — операционная прозрачность и контроль прибыли в барах и ресторанах.
             </p>
           </div>
 
@@ -37,7 +36,7 @@ export const Footer: React.FC = () => {
               </a>
             </div>
             <p className="text-slate-500 text-xs mt-4">
-              Напишите «Хочу разбор» — и мы договоримся о времени.
+              Напишите «Хочу консультацию» — и мы договоримся о времени.
             </p>
           </div>
         </div>
@@ -48,7 +47,7 @@ export const Footer: React.FC = () => {
           </div>
           <div className="text-center md:text-right">
             <p className="text-amber-500/60 italic">
-              P.S. Каждый день без контроля — это деньги, которые уходят не вам.
+              Управление — это не про доверие. Это про систему.
             </p>
           </div>
         </div>

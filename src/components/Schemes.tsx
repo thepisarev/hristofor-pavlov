@@ -1,19 +1,19 @@
 import { Database, Lock, AlertTriangle } from 'lucide-react';
 
-const classicSchemes = [
-  'Не пробивают в кассу — деньги в карман',
-  'Употребляют продукцию бара без оплаты',
-  'Продают свои сигареты, стики — позиций нет в меню, контролировать невозможно',
-  'Берут «чаевые» с каждого гостя без вашего ведома',
-  'Махинации по акциям',
+const operationalRisks = [
+  'Продажи мимо кассы — расхождение между выдачей и чеком',
+  'Потребление продукции бара без учёта',
+  'Реализация собственных товаров через ваше заведение',
+  'Неучтённые «чаевые» с каждого гостя',
+  'Махинации с акциями и спецпредложениями',
 ];
 
-const creativeSchemes = [
-  'Продают лёд по 200₽ за стакан (себестоимость — 0)',
-  'Пускают «за косарь» тех, кому отказали на входе',
-  'Оформляют 5 диджеев, по факту работают 3',
-  'Продают ваш реквизит гостям',
-  'Обманывают и обсчитывают гостей',
+const systemicRisks = [
+  'Продажа позиций с нулевой себестоимостью (лёд, вода) без фиксации',
+  'Платный вход для «отказных» гостей в обход кассы',
+  'Оформление персонала, который не работает',
+  'Реализация реквизита и инвентаря',
+  'Обсчёт гостей с присвоением разницы',
 ];
 
 export const Schemes: React.FC = () => {
@@ -35,16 +35,16 @@ export const Schemes: React.FC = () => {
 
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-20">
-          <div className="inline-block px-3 py-1 bg-red-500/10 text-red-400 font-mono text-xs rounded-sm mb-4 uppercase tracking-widest border border-red-500/20">
-            Вот что я нахожу в первую же неделю проверки
+          <div className="inline-block px-3 py-1 bg-amber-500/10 text-amber-500 font-mono text-xs rounded-sm mb-4 uppercase tracking-widest border border-amber-500/20">
+            Типовые зоны риска по данным 16 000+ аудитов
           </div>
           <h2 className="text-3xl md:text-5xl text-white font-display font-bold">
-            Как именно у вас воруют
+            Где бары теряют прибыль
           </h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {/* Card: Classic */}
+          {/* Card: Operational */}
           <div className="bg-slate-950 border border-slate-800 p-8 rounded-sm hover:border-amber-500/30 transition-all duration-300 group relative overflow-hidden">
             <div className="absolute -bottom-10 -right-10 opacity-10 group-hover:opacity-20 transition-opacity duration-500 text-amber-500">
               <svg width="200" height="200" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="1">
@@ -55,20 +55,20 @@ export const Schemes: React.FC = () => {
             </div>
 
             <div className="flex items-center justify-between mb-8 border-b border-slate-800 pb-4 relative z-10">
-              <h3 className="text-xl text-white font-display font-medium uppercase">Классика</h3>
+              <h3 className="text-xl text-white font-display font-medium uppercase">Операционные</h3>
               <Database className="text-slate-600 group-hover:text-amber-500 transition-colors" />
             </div>
             <div className="space-y-4 font-mono text-sm text-slate-400 relative z-10">
-              {classicSchemes.map((scheme, idx) => (
+              {operationalRisks.map((scheme, idx) => (
                 <div key={idx} className="flex gap-3">
-                  <span className="text-red-500 font-bold shrink-0">[!]</span>
+                  <span className="text-amber-500 font-bold shrink-0">[{String(idx + 1).padStart(2, '0')}]</span>
                   <p>{scheme}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Card: Creative */}
+          {/* Card: Systemic */}
           <div className="bg-slate-950 border border-slate-800 p-8 rounded-sm hover:border-amber-500/30 transition-all duration-300 group relative overflow-hidden">
             <div className="absolute -bottom-10 -right-10 opacity-10 group-hover:opacity-20 transition-opacity duration-500 text-amber-500">
               <svg width="200" height="200" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="1">
@@ -81,13 +81,13 @@ export const Schemes: React.FC = () => {
             </div>
 
             <div className="flex items-center justify-between mb-8 border-b border-slate-800 pb-4 relative z-10">
-              <h3 className="text-xl text-white font-display font-medium uppercase">Изобретательное</h3>
+              <h3 className="text-xl text-white font-display font-medium uppercase">Системные</h3>
               <Lock className="text-slate-600 group-hover:text-amber-500 transition-colors" />
             </div>
             <div className="space-y-4 font-mono text-sm text-slate-400 relative z-10">
-              {creativeSchemes.map((scheme, idx) => (
+              {systemicRisks.map((scheme, idx) => (
                 <div key={idx} className="flex gap-3">
-                  <span className="text-amber-500 font-bold shrink-0">[warn]</span>
+                  <span className="text-amber-500 font-bold shrink-0">[{String(idx + 6).padStart(2, '0')}]</span>
                   <p>{scheme}</p>
                 </div>
               ))}
@@ -95,11 +95,11 @@ export const Schemes: React.FC = () => {
           </div>
         </div>
 
-        {/* Highlighted Case */}
-        <div className="mt-12 bg-gradient-to-r from-red-900/20 to-slate-900 border border-red-900/30 p-6 rounded-sm flex items-start gap-4">
-          <AlertTriangle className="text-red-500 w-6 h-6 shrink-0 mt-0.5" />
+        {/* Highlighted Note */}
+        <div className="mt-12 bg-gradient-to-r from-amber-900/20 to-slate-900 border border-amber-900/30 p-6 rounded-sm flex items-start gap-4">
+          <AlertTriangle className="text-amber-500 w-6 h-6 shrink-0 mt-0.5" />
           <p className="text-slate-300 text-sm leading-relaxed">
-            <span className="text-red-400 font-bold">Реальный кейс:</span> В Сочи бармены уволились, не расстроились — и открыли свой бар. На ваши деньги.
+            <span className="text-amber-400 font-bold">Важно:</span> Эти зоны риска существуют в большинстве заведений — независимо от уровня команды. Потери возникают не потому что сотрудники плохие, а потому что процессы не прозрачны.
           </p>
         </div>
       </div>

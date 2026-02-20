@@ -1,4 +1,4 @@
-import { ChevronRight, AlertCircle, Eye, TrendingDown } from 'lucide-react';
+import { ChevronRight, Eye, TrendingUp } from 'lucide-react';
 
 interface HeroProps {
   onCtaClick: () => void;
@@ -35,19 +35,20 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
               </span>
-              Внимание: Выручка под угрозой
+              Операционная прозрачность баров
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white leading-[1.1]">
-              Сколько денег утекает из вашего бара{' '}
+              Верните контроль над{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-600">
-                прямо сейчас?
+                прибылью вашего бара
               </span>
             </h1>
 
             <p className="text-lg text-slate-400 max-w-lg leading-relaxed font-light">
-              85% баров теряют деньги на воровстве персонала. Не 50%. Не «некоторые».
-              Восемьдесят пять из ста. Это данные из 60+ заведений, проверенных лично.
+              По данным из 60+ проверенных заведений, <span className="text-white font-medium">85% баров</span> теряют
+              от 8 до 15% оборота из-за отсутствия прозрачной системы контроля.
+              Видеоаудит показывает, где именно уходят деньги — и как это исправить.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
@@ -56,7 +57,7 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
                 className="group relative px-6 py-4 bg-amber-600 hover:bg-amber-500 text-white font-mono text-sm rounded-sm transition-all uppercase tracking-wider font-bold"
               >
                 <div className="flex items-center gap-2">
-                  Узнать, сколько теряете вы <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  Узнать, сколько вы можете вернуть <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
               </button>
               <a
@@ -77,7 +78,7 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
                 <path d="M42 30 L42 15 L58 15 L58 30" strokeWidth="1" />
                 <path d="M40 15 L60 15" strokeWidth="1" />
                 <path d="M30 80 Q50 85 70 80" strokeWidth="1" />
-                <line x1="0" y1="50" x2="100" y2="50" stroke="currentColor" strokeWidth="0.5" strokeDasharray="2 2" className="text-red-500" />
+                <line x1="0" y1="50" x2="100" y2="50" stroke="currentColor" strokeWidth="0.5" strokeDasharray="2 2" className="text-amber-500" />
                 <rect x="20" y="20" width="60" height="60" stroke="currentColor" strokeWidth="0.5" strokeDasharray="4 4" />
                 <path d="M20 25 L25 20 M80 25 L75 20 M20 75 L25 80 M80 75 L75 80" strokeWidth="1" />
               </svg>
@@ -87,49 +88,48 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent opacity-50"></div>
 
               <div className="flex justify-between text-slate-500 border-b border-slate-800 pb-2">
-                <span>ОБЪЕКТ: BAR_MAIN_HALL</span>
+                <span>АУДИТ: BAR_MAIN_HALL</span>
                 <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
-                  REC [CAM_01]
+                  <div className="w-2 h-2 bg-amber-500 rounded-full animate-pulse"></div>
+                  АНАЛИЗ [CAM_01]
                 </div>
               </div>
 
               <div className="space-y-4 relative">
                 <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-amber-500/5 to-transparent bg-[length:100%_20%] animate-scan pointer-events-none"></div>
 
-                <div className="border-l-2 border-red-500/50 pl-4 py-1 relative group hover:bg-slate-800/50 transition-colors cursor-crosshair">
-                  <div className="absolute -left-[5px] top-1/2 -translate-y-1/2 w-2 h-2 bg-red-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity shadow-[0_0_10px_red]"></div>
-                  <div className="flex justify-between items-center text-red-400 mb-1">
-                    <span className="flex items-center gap-2 font-bold"><AlertCircle className="w-3 h-3" /> НАРУШЕНИЕ #1024</span>
-                    <span>22:42:15</span>
-                  </div>
-                  <div className="text-slate-300 mb-2">
-                    {'>'} Бармен не пробивает в кассу<br />
-                    {'>'} Деньги от гостя — в карман
-                  </div>
-                  <div className="inline-block bg-red-500/10 text-red-400 px-2 py-1 rounded-sm text-[10px] border border-red-500/20">
-                    УЩЕРБ: 4 500 ₽
-                  </div>
-                </div>
-
                 <div className="border-l-2 border-amber-500/50 pl-4 py-1 relative group hover:bg-slate-800/50 transition-colors cursor-crosshair">
                   <div className="absolute -left-[5px] top-1/2 -translate-y-1/2 w-2 h-2 bg-amber-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity shadow-[0_0_10px_orange]"></div>
                   <div className="flex justify-between items-center text-amber-500 mb-1">
-                    <span className="flex items-center gap-2 font-bold"><Eye className="w-3 h-3" /> ПОДОЗРИТЕЛЬНАЯ АКТИВНОСТЬ</span>
+                    <span className="flex items-center gap-2 font-bold"><Eye className="w-3 h-3" /> ЗОНА РИСКА #1024</span>
+                    <span>22:42:15</span>
+                  </div>
+                  <div className="text-slate-300 mb-2">
+                    {'>'} Операция вне кассы<br />
+                    {'>'} Расхождение между чеком и выдачей
+                  </div>
+                  <div className="inline-block bg-amber-500/10 text-amber-400 px-2 py-1 rounded-sm text-[10px] border border-amber-500/20">
+                    ПОТЕНЦИАЛЬНЫЕ ПОТЕРИ: 4 500 ₽
+                  </div>
+                </div>
+
+                <div className="border-l-2 border-slate-600/50 pl-4 py-1 relative group hover:bg-slate-800/50 transition-colors cursor-crosshair">
+                  <div className="absolute -left-[5px] top-1/2 -translate-y-1/2 w-2 h-2 bg-slate-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="flex justify-between items-center text-slate-400 mb-1">
+                    <span className="flex items-center gap-2 font-bold"><Eye className="w-3 h-3" /> СЛЕПАЯ ЗОНА</span>
                     <span>23:15:00</span>
                   </div>
                   <div className="text-slate-300">
-                    {'>'} Продажа своих сигарет гостям<br />
-                    {'>'} Позиции нет в меню — контроль невозможен
+                    {'>'} Неконтролируемая допродажа<br />
+                    {'>'} Позиция отсутствует в системе учёта
                   </div>
                 </div>
               </div>
 
               <div className="bg-slate-950 p-4 rounded-sm border border-slate-800 flex justify-between items-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-red-500/5 animate-pulse"></div>
-                <span className="text-slate-500 z-10">ПРОГНОЗ ПОТЕРЬ ЗА СМЕНУ:</span>
-                <span className="text-red-500 text-lg font-bold flex items-center gap-2 z-10">
-                  <TrendingDown className="w-4 h-4" /> -12 400 ₽
+                <span className="text-slate-500 z-10">ПОТЕНЦИАЛ ВОЗВРАТА:</span>
+                <span className="text-amber-500 text-lg font-bold flex items-center gap-2 z-10">
+                  <TrendingUp className="w-4 h-4" /> +12 400 ₽ / смена
                 </span>
               </div>
             </div>

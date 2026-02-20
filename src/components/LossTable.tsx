@@ -13,9 +13,9 @@ export const LossTable: React.FC = () => {
           <path d="M0,300 Q150,250 300,280 T600,200 T900,100 T1200,50" fill="none" stroke="url(#loss-gradient)" strokeWidth="2" vectorEffect="non-scaling-stroke" />
           <defs>
             <linearGradient id="loss-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#ef4444" stopOpacity="0" />
-              <stop offset="50%" stopColor="#ef4444" stopOpacity="1" />
-              <stop offset="100%" stopColor="#f59e0b" stopOpacity="1" />
+              <stop offset="0%" stopColor="#f59e0b" stopOpacity="0" />
+              <stop offset="50%" stopColor="#f59e0b" stopOpacity="1" />
+              <stop offset="100%" stopColor="#ef4444" stopOpacity="1" />
             </linearGradient>
           </defs>
         </svg>
@@ -24,13 +24,13 @@ export const LossTable: React.FC = () => {
       <div className="max-w-5xl mx-auto relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16">
           <div>
-            <h4 className="text-amber-500 font-mono text-xs mb-2 uppercase tracking-widest">/ Статистика</h4>
+            <h4 className="text-amber-500 font-mono text-xs mb-2 uppercase tracking-widest">/ Масштаб проблемы</h4>
             <h2 className="text-3xl md:text-4xl text-white font-display font-bold">
-              Сколько это в деньгах?
+              Почему даже сильные бары теряют 8–15% оборота
             </h2>
           </div>
           <p className="text-slate-500 text-sm font-mono max-w-xs mt-4 md:mt-0 text-right">
-            На основе данных из 60+<br />проверенных заведений.
+            Потери возникают не из-за плохих<br />сотрудников, а там, где нет системы.
           </p>
         </div>
 
@@ -52,7 +52,7 @@ export const LossTable: React.FC = () => {
                 </div>
                 <div>
                   <span className="text-xs text-slate-500 uppercase md:hidden">В месяц: </span>
-                  <span className="text-red-400 font-mono text-sm">{item.lossMonth}</span>
+                  <span className="text-amber-400 font-mono text-sm">{item.lossMonth}</span>
                 </div>
                 <div>
                   <span className="text-xs text-slate-500 uppercase md:hidden">В год: </span>
@@ -71,9 +71,25 @@ export const LossTable: React.FC = () => {
 
         <div className="mt-12 bg-slate-900/60 border border-slate-800 p-6 rounded-sm">
           <p className="text-slate-400 text-sm leading-relaxed">
-            <span className="text-amber-500 font-bold">Средние потери — 12% оборота.</span> И это не из выручки. Это из вашей чистой прибыли.
-            Сырьё оплачено, аренда оплачена, зарплаты выданы. Всё, что воруют — это уже ваши деньги.
+            <span className="text-amber-500 font-bold">В среднем — 12% оборота.</span> Это не процент от выручки — это ваша чистая прибыль.
+            Сырьё оплачено, аренда оплачена, зарплаты выданы. Потери идут из того, что уже заработано.
           </p>
+        </div>
+
+        {/* Risk Zones */}
+        <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {[
+            'Операции вне кассы',
+            'Расхождения по порциям и списаниям',
+            'Неконтролируемые допродажи',
+            'Договорённости внутри смен',
+            'Слепые зоны при масштабировании',
+          ].map((zone, idx) => (
+            <div key={idx} className="flex items-center gap-3 text-slate-500 text-sm font-mono">
+              <span className="w-1.5 h-1.5 bg-amber-500/60 rounded-full shrink-0"></span>
+              {zone}
+            </div>
+          ))}
         </div>
       </div>
     </section>
