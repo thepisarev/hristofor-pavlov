@@ -19,20 +19,20 @@ export const Footer: React.FC = () => {
             <h4 className="text-white font-display font-bold uppercase text-sm">Контакты</h4>
             <div className="space-y-3 font-mono text-sm">
               <a
-                href="https://t.me/username"
+                href="https://t.me/hristoforpavlov"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-slate-400 hover:text-amber-500 transition-colors"
               >
                 <Send className="w-4 h-4" />
-                Telegram: @______
+                Telegram: @hristoforpavlov
               </a>
               <a
-                href="tel:+7__________"
+                href="tel:+79219879823"
                 className="flex items-center gap-3 text-slate-400 hover:text-amber-500 transition-colors"
               >
                 <Phone className="w-4 h-4" />
-                +7 ___ ___ __ __
+                +7 921 987-98-23
               </a>
             </div>
             <p className="text-slate-500 text-xs mt-4">

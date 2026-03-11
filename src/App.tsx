@@ -69,7 +69,7 @@ export default function App() {
               onSubmit={(e) => {
                 e.preventDefault();
                 closeModal();
-                window.open('https://t.me/username', '_blank');
+                window.open('https://t.me/hristoforpavlov', '_blank');
               }}
             >
               <div className="space-y-1">
