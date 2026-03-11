@@ -41,7 +41,7 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white leading-[1.1]">
               Верните контроль над{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-600">
-                прибылью вашего бара
+                деньгами вашего бара
               </span>
             </h1>
 
@@ -57,7 +57,7 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
                 className="group relative px-6 py-4 bg-amber-600 hover:bg-amber-500 text-white font-mono text-sm rounded-sm transition-all uppercase tracking-wider font-bold"
               >
                 <div className="flex items-center gap-2">
-                  Узнать, сколько вы можете вернуть <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  Узнать, сколько вы теряете каждый день <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
               </button>
               <a
