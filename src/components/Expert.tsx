@@ -27,15 +27,11 @@ export const Expert: React.FC = () => {
         <div className="flex flex-col md:flex-row items-center gap-12 bg-slate-950 border border-slate-800 p-8 md:p-12 rounded-lg shadow-2xl">
           <div className="w-full md:w-1/3 relative">
             <div className="aspect-square bg-slate-800 rounded-sm overflow-hidden relative">
-              {/* Photo placeholder */}
-              <div className="w-full h-full bg-slate-800 flex items-center justify-center">
-                <div className="text-center text-slate-600">
-                  <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-slate-700 flex items-center justify-center">
-                    <span className="text-4xl font-display font-bold text-slate-500">ХП</span>
-                  </div>
-                  <span className="text-xs font-mono uppercase">Фото</span>
-                </div>
-              </div>
+              <img
+                src="/expert.jpg"
+                alt="Христофор Павлов — эксперт по операционной прозрачности баров"
+                className="w-full h-full object-cover object-top"
+              />
               <div className="absolute inset-0 bg-scan-line bg-[length:100%_200%] animate-scan opacity-50"></div>
               <div className="absolute bottom-4 left-4 bg-slate-950/80 px-2 py-1 text-[10px] text-amber-500 font-mono border border-amber-500/30">
                 ID: PAVLOV_H
