@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, lazy, Suspense } from 'react';
 import { Hero } from './components/Hero';
 import { LossTable } from './components/LossTable';
 import { Schemes } from './components/Schemes';
@@ -6,6 +6,7 @@ import { Myths } from './components/Myths';
 import { Expert } from './components/Expert';
 import { Result } from './components/Result';
 import { Cases } from './components/Cases';
+const Geography = lazy(() => import('./components/Geography').then(m => ({ default: m.Geography })));
 import { Steps } from './components/Steps';
 import { Pricing } from './components/Pricing';
 import { CTA } from './components/CTA';
@@ -42,6 +43,9 @@ export default function App() {
         <Expert />
         <Result />
         <Cases />
+        <Suspense fallback={<div className="py-24 bg-slate-950" />}>
+          <Geography />
+        </Suspense>
         <Steps />
         <Pricing />
         <CTA onCtaClick={openModal} />

@@ -8,11 +8,9 @@ interface HeroV2Props {
 export default function HeroV2({ onCtaClick }: HeroV2Props) {
   return (
     <section className="relative min-h-screen bg-slate-950 overflow-hidden">
-      {/* Background bar image overlay */}
-      <div
-        className="absolute inset-0 bg-cover bg-center opacity-[0.12]"
-        style={{ backgroundImage: "url('/bar-bg.jpg')" }}
-      />
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900/50 to-slate-950 pointer-events-none" />
+      <div className="absolute inset-0 bg-grid opacity-20 pointer-events-none" />
 
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
