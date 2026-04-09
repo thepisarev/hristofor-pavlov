@@ -43,15 +43,16 @@ const cards: PricingCard[] = [
     price: "от 300 000 \u20BD",
     priceNote: "точные условия индивидуально",
     description:
-      "Полный цикл: аудит, внедрение регламентов, обучение команды и контроль исполнения на протяжении 3 месяцев.",
+      "Полный цикл: аудит, разработка и внедрение регламентов, проверка работы по ним, корректировка в течение квартала.",
     features: [
       "Всё из экспресс-аудита",
       "Разработка и внедрение регламентов",
-      "Обучение и аттестация персонала",
-      "Ежемесячный контроль и корректировка",
+      "Проверка работы по регламентам",
+      "Корректировка в течение квартала",
+      "Включает ежемесячное обслуживание",
     ],
     footer:
-      "Включает ежемесячное сопровождение на весь период внедрения",
+      "Система контроля под ключ на 3 месяца",
     highlighted: true,
     badge: "МАКСИМАЛЬНЫЙ РЕЗУЛЬТАТ",
   },
@@ -73,13 +74,13 @@ const cards: PricingCard[] = [
 const triggers = [
   {
     icon: <TrendingDown className="w-6 h-6 text-amber-500" />,
-    title: "Выручка падает",
-    desc: "При стабильном потоке гостей прибыль снижается",
+    title: "Падает стабильность прибыли",
+    desc: "При стабильном потоке гостей выручка снижается",
   },
   {
     icon: <Users className="w-6 h-6 text-amber-500" />,
-    title: "Новая команда",
-    desc: "Сменился управляющий или ключевые сотрудники",
+    title: "Открываете вторую точку",
+    desc: "Масштабируете бизнес — нужны регламенты",
   },
   {
     icon: <BarChart3 className="w-6 h-6 text-amber-500" />,
@@ -204,6 +205,36 @@ export default function PricingV2({ onCtaClick }: PricingV2Props) {
                 <p className="text-[#94A3B8] text-sm">{t.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* Sochi story */}
+        <div className={`mt-12 relative rounded-2xl overflow-hidden transition-all duration-700 ${isVisible ? 'animate-reveal-up' : 'opacity-0 translate-y-8'}`} style={{ animationDelay: '0.9s' }}>
+          <div className="absolute inset-0 bg-gradient-to-br from-amber-900/20 via-[#1E2D45] to-[#162032]" />
+          <div className="relative p-8 md:p-12 border border-amber-500/20 rounded-2xl">
+            <div className="flex items-start gap-4 mb-6">
+              <span className="text-amber-500 font-mono text-xs uppercase tracking-widest shrink-0 mt-1">История из практики</span>
+              <div className="flex-1 h-px bg-gradient-to-r from-amber-500/40 to-transparent mt-3" />
+            </div>
+
+            <h3 className="text-white text-2xl md:text-3xl font-bold leading-tight mb-6">
+              Пять лет доверия — и свой бар на соседней улице
+            </h3>
+
+            <div className="space-y-4 text-slate-300 text-[15px] md:text-base leading-relaxed max-w-3xl">
+              <p>
+                Ко мне обратился владелец коктейль-бара в Сочи. История классическая: <span className="text-white font-medium">пять лет</span> с ним работала одна и та же команда барменов — «свои в доску», «ребята как семья», «я им доверяю как себе».
+              </p>
+              <p>
+                Мы подключились к камерам. <span className="text-white font-medium">За три смены</span> нашли систематические схемы: недоливы, продажи мимо кассы, «свои» гости без чеков. Владелец долго не верил — пока не увидел записи.
+              </p>
+              <p>
+                Он уволил всех. А через <span className="text-amber-400 font-medium">месяц</span> те ребята открыли <span className="text-amber-400 font-medium">свой собственный бар</span> на соседней улице.
+              </p>
+              <div className="pt-2 border-l-2 border-amber-500 pl-5 mt-6 italic text-amber-300 text-lg">
+                «Наворовались ровно столько, чтобы хватило открыть своё заведение».
+              </div>
+            </div>
           </div>
         </div>
       </div>

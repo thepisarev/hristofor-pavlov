@@ -44,8 +44,7 @@ export default function MythsV2() {
         {/* Intro text */}
         <p className={`text-lg text-slate-300 max-w-3xl mb-10 leading-relaxed transition-all duration-700 delay-200 ${isVisible ? 'animate-reveal-up' : 'opacity-0 translate-y-8'}`}>
           Кажется, что вы контролируете каждый процесс, но невидимые утечки
-          маскируются под обычную рутину. Мы сталкиваемся с ними каждый день и
-          знаем, как их выявить.
+          маскируются под обычную рутину. <span className="text-amber-400 font-medium">Мы знаем, как их выявить — и как это исправить.</span>
         </p>
 
         {/* Photo block */}
